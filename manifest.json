@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "More Pablo",
+  "version": "0.0.1",
+
+  "permissions": [
+      "activeTab",
+      "contextMenus",
+      "<all_urls>",
+      "storage"
+    ],
+
+
+   "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "jquery-3.5.1.min.js", "pablo.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    "img/*.jpg"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "description": "Injects more Pablo into your life."
+}
